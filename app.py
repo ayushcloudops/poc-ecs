@@ -2,7 +2,11 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
 tasks = []
+=======
+tasks = [{"name": "Ayush Singh Internal Competency Change"}]
+>>>>>>> 8f4b214 (updated app.py)
 
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
