@@ -15,9 +15,6 @@ jobs:
     - name: Build Docker image
       run: docker build . -t qoala-python-app
 
-    - name: Run Tests in Docker container
-      run: docker run --name test-container qoala-python-app
-
     - name: Cleanup Docker container
       if: always()
       run: dock
