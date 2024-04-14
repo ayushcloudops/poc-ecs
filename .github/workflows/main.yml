@@ -1,0 +1,23 @@
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: docker build . -t qoala-python-app
+
+    - name: Run Tests in Docker container
+      run: docker run --name test-container qoala-python-app
+
+    - name: Cleanup Docker container
+      if: always()
+      run: dock
